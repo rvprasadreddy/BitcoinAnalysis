@@ -19,11 +19,10 @@ object SessionVariables {
   // build Spark Session
   def getSparkSession: SparkSession = {
     if (sparkSession == null) {
-      sparkSession = SparkSession
-												        .builder()
-												        .appName("BitCoinAnalysis")
-												        .enableHiveSupport()
-												        .getOrCreate()
+      sparkSession = SparkSession.builder()
+				.appName("BitCoinAnalysis")
+				.enableHiveSupport()
+				.getOrCreate()
     }
     return sparkSession
   }
